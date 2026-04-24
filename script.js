@@ -37,17 +37,6 @@
 
   const WEB3FORMS_KEY = 'f3fdcdb9-e7c5-4744-8d38-aff48277c7fb';
 
-  // Favicon
-  (function() {
-    let link = document.querySelector('link[rel="icon"]');
-    if (!link) {
-      link = document.createElement('link');
-      link.rel = 'icon';
-      document.head.appendChild(link);
-    }
-    link.href = 'light.png?v=3';
-  })();
-
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
