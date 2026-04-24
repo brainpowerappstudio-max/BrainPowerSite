@@ -37,25 +37,15 @@
 
   const WEB3FORMS_KEY = 'f3fdcdb9-e7c5-4744-8d38-aff48277c7fb';
 
-  // Favicon theme switcher
+  // Favicon
   (function() {
-    const darkIcon = 'icon-dark.ico';
-    const lightIcon = 'icon-light.ico';
-
-    function setFavicon() {
-      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const icon = isDark ? lightIcon : darkIcon;
-      let link = document.querySelector('link[rel="icon"]');
-      if (!link) {
-        link = document.createElement('link');
-        link.rel = 'icon';
-        document.head.appendChild(link);
-      }
-      link.href = icon;
+    let link = document.querySelector('link[rel="icon"]');
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'icon';
+      document.head.appendChild(link);
     }
-
-    setFavicon();
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFavicon);
+    link.href = 'icon-light.ico';
   })();
 
   if (form) {
