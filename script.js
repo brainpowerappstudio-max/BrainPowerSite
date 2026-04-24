@@ -35,7 +35,7 @@
     });
   }
 
-  const WEB3FORMS_KEY = '26837c6c-8a5d-47de-91e5-945b887dfc67';
+  const WEB3FORMS_KEY = 'f3fdcdb9-e7c5-4744-8d38-aff48277c7fb';
 
   // Favicon theme switcher
   (function() {
