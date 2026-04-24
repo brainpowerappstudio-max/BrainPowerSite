@@ -89,8 +89,8 @@
             name,
             email,
             message,
-            subject:   `New message from ${name} — Dream Way website`,
-            from_name: 'Dream Way Website',
+            subject:   `New message from ${name} — Brain Power website`,
+            from_name: 'Brain Power Website',
           }),
         });
 
@@ -107,7 +107,7 @@
         }
       } catch {
         if (formNote) {
-          formNote.textContent = 'Failed to send. Please email us at dreamway.gamestudio@gmail.com directly.';
+          formNote.textContent = 'Failed to send. Please email us at brainpower.appstudio@gmail.com directly.';
           formNote.className   = 'form-note form-note-error';
         }
       } finally {
@@ -139,6 +139,38 @@
     } else {
       revealEls.forEach(revealNow);
     }
+  }
+
+  // Header scroll glass effect
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Animated counter for stats
+  const counterEls = Array.from(document.querySelectorAll('[data-count], [data-count-float]'));
+  if (counterEls.length && 'IntersectionObserver' in window) {
+    const countUp = (el) => {
+      const isFloat = el.hasAttribute('data-count-float');
+      const target = isFloat ? parseFloat(el.dataset.countFloat) : parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const start = performance.now();
+      const step = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = isFloat ? (eased * target).toFixed(1) : Math.round(eased * target);
+        el.textContent = val + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    const cIo = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (!e.isIntersecting) return; countUp(e.target); cIo.unobserve(e.target); });
+    }, { threshold: 0.6 });
+    counterEls.forEach((el) => cIo.observe(el));
   }
 
   const sections = Array.from(document.querySelectorAll('main section[id]'));
