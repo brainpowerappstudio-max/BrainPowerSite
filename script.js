@@ -45,7 +45,7 @@
       link.rel = 'icon';
       document.head.appendChild(link);
     }
-    link.href = 'icon-light.ico';
+    link.href = 'newico.ico';
   })();
 
   if (form) {
