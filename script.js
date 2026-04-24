@@ -37,7 +37,7 @@
 
   // On Vercel with Vite: set VITE_WEB3FORMS_KEY in environment variables
   // On static hosting: fallback key is used
-  const WEB3FORMS_KEY = import.meta.env?.VITE_WEB3FORMS_KEY || '3b25e456-e167-4921-acca-33315e0b490c';
+  const WEB3FORMS_KEY = import.meta.env?.VITE_WEB3FORMS_KEY || '26837c6c-8a5d-47de-91e5-945b887dfc67';
 
   // Favicon theme switcher
   (function() {
