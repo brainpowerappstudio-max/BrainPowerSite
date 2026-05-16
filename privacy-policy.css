@@ -97,6 +97,10 @@
   line-height: 1.7;
 }
 
+.privacy-text-spaced {
+  margin-top: 24px;
+}
+
 .privacy-list {
   margin: 0 0 16px;
   padding-left: 24px;
