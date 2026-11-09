@@ -1,0 +1,171 @@
+.deletion-page .privacy-section {
+  padding-block: clamp(28px, 6vw, 68px);
+}
+
+.deletion-container {
+  max-width: 960px;
+}
+
+.deletion-page .privacy-header {
+  margin-bottom: 24px;
+  padding: clamp(20px, 4vw, 40px);
+  text-align: left;
+  background: linear-gradient(125deg, var(--surface-2), var(--brand-dim));
+  border-color: var(--border);
+}
+
+.deletion-page .privacy-header::before {
+  content: none;
+}
+
+.deletion-page .privacy-title span {
+  display: block;
+  margin-top: 6px;
+  color: var(--brand-2);
+}
+
+.deletion-page .privacy-intro {
+  max-width: 65ch;
+  margin: 0;
+}
+
+.deletion-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.deletion-meta strong {
+  color: var(--text);
+}
+
+.deletion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.deletion-page .privacy-section-block {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.deletion-page .privacy-section-block:hover {
+  transform: none;
+  border-color: var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.deletion-page .privacy-section-block a:not(.btn) {
+  color: var(--brand-2);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.deletion-page .privacy-section-block a:focus-visible,
+.deletion-page .site-nav a:focus-visible {
+  outline: 2px solid var(--brand-2);
+  outline-offset: 3px;
+}
+
+.deletion-page .privacy-text:last-child,
+.deletion-page .privacy-list:last-child {
+  margin-bottom: 0;
+}
+
+.deletion-request,
+.deletion-help {
+  grid-column: 1 / -1;
+}
+
+.deletion-request {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 250px);
+  grid-template-areas:
+    "heading heading"
+    "steps action";
+  align-items: start;
+  gap: 0 24px;
+}
+
+.deletion-request h2 {
+  grid-area: heading;
+}
+
+.deletion-request .privacy-list {
+  grid-area: steps;
+  margin-bottom: 0;
+}
+
+.deletion-action {
+  grid-area: action;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--soft);
+}
+
+.deletion-page .btn {
+  min-height: 44px;
+  text-align: center;
+}
+
+.deletion-action .btn {
+  width: 100%;
+}
+
+.deletion-note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .deletion-page .site-header {
+    position: static;
+  }
+
+  .deletion-page .header-inner {
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-block: 12px 6px;
+  }
+
+  .deletion-page .site-nav {
+    position: static;
+    display: flex;
+    flex: 1 0 100%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .deletion-page .site-nav .nav-link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: 4px;
+    font-size: 11px;
+  }
+
+  .deletion-grid,
+  .deletion-request {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .deletion-request {
+    grid-template-areas: "heading" "action" "steps";
+  }
+
+  .deletion-action {
+    margin-bottom: 16px;
+  }
+}

@@ -289,6 +289,17 @@ button { font: inherit; cursor: pointer }
 .game-actions { display:flex;gap:8px;flex-wrap:wrap }
 section#apps .center { margin-top:40px }
 
+.apps-support { margin-top:24px;text-align:center }
+.apps-support h3 { margin:0 0 8px;font-size:15px }
+.apps-support ul {
+  display:flex;justify-content:center;gap:4px 20px;flex-wrap:wrap;
+  margin:0;padding:0;list-style:none;
+}
+.apps-support a {
+  display:inline-flex;align-items:center;min-height:44px;
+  color:var(--brand-2);font-size:14px;text-decoration:underline;text-underline-offset:.15em;
+}
+
 /* ─── Buttons ─── */
 .btn {
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
